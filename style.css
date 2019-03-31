@@ -1,0 +1,14 @@
+body {
+background:darkslategray;
+}
+
+#wrapper {
+	
+}
+
+canvas {
+	cursor:none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

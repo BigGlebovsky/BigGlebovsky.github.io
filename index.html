@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sea Battle</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <canvas id="canvas" tabindex='1' width="600" height="600"></canvas>
+        <div id="start-page">
+            <nav>
+                <div class="logo">Battleship Game</div>
+                <input id="start-game" type="button" value="Начать игру">                
+                <input id="record-page" type="button" value="Таблица Рекордов">
+                <p>Ваша задача сбивать бомбы <br>
+                    которые плывут на корабль.</p>
+            </nav>
+        </div>
+
+        <div id="enter-page">
+            <section>
+                <h3>Введите имя:</h3>
+                <input type="text" id="userName" placeholder="Лёша"><br>
+                <div>
+                    <input type="button" id="enterName" value="Да">
+                    <input type="button" id="cancelName" value="Нет">
+                </div>
+            </section>
+
+        </div>
+
+        <div id="end-page">
+                <nav>
+                    <div class="logo">Вы проиграли</div>
+                    <input id="save-game" type="button" value="Сохранить результат">                
+                    <input id="menu-game" type="button" value="В меню">
+                </nav>
+            </div>
+
+        <div id="recordsTable"> 
+            <div>
+                    <svg id="closeTable">
+                            <circle cx="12" cy="12" r="11" stroke="black" stroke-width="2" fill="white" />
+                            <path stroke="black" stroke-width="4" fill="none" d="M6.25,6.25,17.75,17.75" />
+                            <path stroke="black" stroke-width="4" fill="none" d="M6.25,17.75,17.75,6.25" />
+                    </svg>              
+            <table> 
+                    <caption>Топ 3</caption>                   
+                <tbody id='records'>
+                </tbody>
+            </table>
+        </div> 
+        </div>
+    </div>
+    <audio id="music" preload>
+            <source src="audio/music.mp3" type="audio/ogg; codecs=vorbis">
+            <source src="audio/music.mp3" type="audio/mpeg">            
+    </audio>
+
+    <script type="text/javascript" src="view.js"></script>
+    <script type="text/javascript" src="cont.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="record.js"></script>
+    <script src="spa.js"></script>
+</body>
+
+</html>
