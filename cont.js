@@ -11,18 +11,18 @@ function controllerGame() {
         myModel = model;
         myField = field;
 
-        myField.addEventListener("mousemove", myModel.move);
-    
-        myField.addEventListener("touchstart", myModel.touchStart);
+        myField.addEventListener("mousemove", myModel.move);    
+          
+  
         
-        myField.addEventListener("touchstart", myModel.begin);
+        myField.ontouchstart = myModel.begin;
 
-        myField.addEventListener("touchmove", myModel.ftouchMove);
+        myField.ontouchmove = myModel.touchMove;
     
-        myField.addEventListener("touchend", myModel.touchEnd);    
-    
+          
         myField.addEventListener("click", myModel.begin);
     
         //myField.addEventListener("keydown", myModel.pause);
     }
 }
+

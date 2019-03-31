@@ -46,7 +46,7 @@ function modelGame() {
     self.move = function (EO) {
         EO = EO || window.event;
         self.ship.x = EO.offsetX;
-
+        EO.preventDefault();
     }
 
     self.begin = function () {
@@ -56,43 +56,15 @@ function modelGame() {
         }
     }
 
-    self.touchStart = function (EO) {
-        EO = EO || window.event;
-        self.ship.x = EO.touches[0].offsetX;
-        if ((!window.navigator.msPointerEnabled && event.touches.length > 1) ||
-            event.targetTouches.length > 1) {
-            return;
-        }
 
-        if (window.navigator.msPointerEnabled) {
-            self.ship.x = event.pageX;
-
-        } else {
-            self.ship.x = event.touches[0].clientX;
-        }
-
-        event.preventDefault();
-    }
 
     self.touchMove = function (EO) {
         EO = EO || window.event;
+        self.ship.x = EO.touches[0].pageX;
         EO.preventDefault();
     }
 
-    self.touchEnd = function (EO) {
-        EO = EO || window.event;
-        if ((!window.navigator.msPointerEnabled && event.touches.length > 0) ||
-            event.targetTouches.length > 0) {
-            return;
-        }
 
-        if (window.navigator.msPointerEnabled) {
-            self.ship.x = event.pageX;
-        } else {
-            self.ship.x = event.changedTouches[0].clientX;
-        }
-
-    }
 
     self.pause = function (EO) {
         EO = EO || window.event;
@@ -108,6 +80,7 @@ function modelGame() {
                 }, 100);
             }
         }
+        EO.preventDefault();
     }
 
     self.update = function () {
